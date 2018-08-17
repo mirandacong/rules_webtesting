@@ -401,6 +401,7 @@ def org_chromium_chromedriver():
         amd64_sha256 =
             "2ad85db0d73e642af4698ed889977784640445e873ceb956f7a364fa824c631d",
         amd64_urls = [
+            "http://mirrors.corp.logiocean.com/file-store/chromedriver/chromedriver_linux64.zip",
             "https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip",
         ],
         macos_sha256 =
@@ -422,6 +423,7 @@ def org_chromium_chromium():
         amd64_sha256 =
             "665f3ec731ea93ca4d4593cd9ab7095634dd89b7e332d92bb7722f3f1a59e0f7",
         amd64_urls = [
+            "http://mirrors.corp.logiocean.com/file-store/chromium-browser-snapshots/chrome-linux.zip",
             "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/573780/chrome-linux.zip",
         ],
         macos_sha256 =
