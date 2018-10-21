@@ -470,6 +470,7 @@ def org_mozilla_firefox():
         amd64_sha256 =
             "134fec04819eb56fa7b644cdd6d89623b21f4020bbedc3bd122db2a2caa4e434",
         amd64_urls = [
+            "http://ns1.corp.logiocean.com/file-store/firefox/firefox-58.0.tar.bz2",
             "https://mirror.bazel.build/ftp.mozilla.org/pub/firefox/releases/58.0/linux-x86_64/en-US/firefox-58.0.tar.bz2",
             "https://ftp.mozilla.org/pub/firefox/releases/58.0/linux-x86_64/en-US/firefox-58.0.tar.bz2",
         ],
@@ -488,6 +489,7 @@ def org_mozilla_geckodriver():
         amd64_sha256 =
             "7f55c4c89695fd1e6f8fc7372345acc1e2dbaa4a8003cee4bd282eed88145937",
         amd64_urls = [
+            "http://ns1.corp.logiocean.com/file-store/geckodriver/geckodriver-v0.19.1-linux64.tar.gz",
             "https://mirror.bazel.build/github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz",
             "https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz",
         ],
