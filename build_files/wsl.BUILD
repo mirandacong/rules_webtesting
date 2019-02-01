@@ -1,4 +1,4 @@
-# Copyright 2016 Google Inc.
+# Copyright 2019 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,19 @@
 #
 ################################################################################
 #
-licenses(["notice"])  # Apache 2
+load("//web:web.bzl", "web_test_named_executable")
 
-py_library(
-    name = "org_seleniumhq_py",
-    srcs = glob(["**/*.py"]),
-    data = glob(
-        ["**/*"],
-        exclude = ["**/*.py"],
-    ),
+package(default_testonly = True)
+
+licenses(["notice"])  # Apache 2.0
+
+web_test_named_executable(
+    name = "wsl",
+    alt_name = "WEBDRIVER_SERVER_LIGHT",
+    executable = select({
+        "//common/conditions:linux": "main/linux_amd64_stripped/main",
+        "//common/conditions:mac": "main/darwin_amd64_pure_stripped/main",
+        "//common/conditions:windows": "main/windows_amd64_pure_stripped/main.exe",
+    }),
     visibility = ["//visibility:public"],
-    deps = ["@com_github_urllib3"],
 )

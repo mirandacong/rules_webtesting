@@ -25,6 +25,7 @@ licenses(["notice"])  # Apache 2.0
 
 exports_files(
     glob([
+        "*.bat",
         "*.sh",
         "*.sh.template",
     ]),
@@ -38,6 +39,17 @@ skylark_library(
         ":metadata",
         ":provider",
         ":runfiles",
+    ],
+)
+
+skylark_library(
+    name = "custom_browser",
+    srcs = ["custom_browser.bzl"],
+    deps = [
+        ":metadata",
+        ":provider",
+        ":runfiles",
+        "@bazel_skylib//lib:dicts",
     ],
 )
 

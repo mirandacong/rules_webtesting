@@ -1,4 +1,4 @@
-# Copyright 2016 Google Inc.
+# Copyright 2019 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,16 @@
 #
 ################################################################################
 #
-licenses(["notice"])  # Apache 2
+package(default_testonly = True)
 
-py_library(
-    name = "org_seleniumhq_py",
-    srcs = glob(["**/*.py"]),
-    data = glob(
-        ["**/*"],
-        exclude = ["**/*.py"],
-    ),
+licenses(["notice"])  # Apache 2.0
+
+alias(
+    name = "main",
+    actual  = select({
+        "//common/conditions:linux": "linux_amd64_stripped/main",
+        "//common/conditions:mac": "darwin_amd64_pure_stripped/main",
+        "//common/conditions:windows": "windows_amd64_pure_stripped/main.exe",
+    }),
     visibility = ["//visibility:public"],
-    deps = ["@com_github_urllib3"],
 )
